@@ -59,6 +59,8 @@ export default function Terms() {
             <a href="mailto:dermalab9@gmail.com">dermalab9@gmail.com</a>.
           </p>
         </section>
+        //This is changes from GitHub not locally
+//it is to test git stash,pull and statsh pop operations
 
         {/* ✅ Back to Signup Button */}
         <button className="back-btn" onClick={() => navigate("/signup")}>
