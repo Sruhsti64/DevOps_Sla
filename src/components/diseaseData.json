@@ -1,0 +1,113 @@
+{
+  "Actinic Keratoses (akiec)": {
+    "full_name": "Actinic Keratoses / Intraepithelial Carcinoma",
+    "description": "A precancerous scaly patch caused by long-term sun damage that can evolve into squamous cell carcinoma if untreated.",
+    "symptoms": ["Rough, dry, or scaly patch", "Crusty texture", "Color variation (pink, red, or brown)"],
+    "risk_factors": ["Chronic UV exposure", "Fair skin", "Age over 40"],
+    "treatment": "Cryotherapy, photodynamic therapy, or topical medications (e.g., 5-FU or imiquimod).",
+    "precautions": "Avoid direct sunlight, use broad-spectrum sunscreen, and monitor skin changes.",
+    "severity_logic": {
+      "mild": "Single, small lesion with minimal scaling.",
+      "moderate": "Multiple lesions or one with thicker scaling and redness.",
+      "severe": "Widespread lesions with crusting or signs of bleeding; possible carcinoma development."
+    },
+    "urgency_level": "Medium",
+    "recommendation": "Dermatologist evaluation recommended to prevent cancer progression."
+  },
+
+  "Basal Cell Carcinoma (bcc)": {
+    "full_name": "Basal Cell Carcinoma",
+    "description": "A slow-growing type of skin cancer that arises from the basal cells, often appearing as a shiny bump or open sore.",
+    "symptoms": ["Shiny bump or nodule", "Open sore that doesn’t heal", "Red patch or scar-like area"],
+    "risk_factors": ["Prolonged sun exposure", "Fair skin", "Radiation exposure"],
+    "treatment": "Surgical excision, Mohs surgery, cryotherapy, or topical chemotherapy.",
+    "precautions": "Use sunscreen daily, avoid tanning beds, and perform regular skin checks.",
+    "severity_logic": {
+      "mild": "Small, well-defined lesion with no ulceration.",
+      "moderate": "Irregular borders or localized ulceration.",
+      "severe": "Large, bleeding, or invasive lesion; potential tissue damage."
+    },
+    "urgency_level": "High",
+    "recommendation": "Consult a dermatologist for prompt treatment and removal."
+  },
+
+  "Benign Keratosis (bkl)": {
+    "full_name": "Benign Keratosis (Seborrheic Keratosis)",
+    "description": "A non-cancerous, wart-like growth common in older adults, often brown or black in color.",
+    "symptoms": ["Rough or waxy texture", "Brown or black growth", "Can appear stuck-on or raised"],
+    "risk_factors": ["Age", "Sun exposure", "Genetic predisposition"],
+    "treatment": "Generally none; cryotherapy or laser removal if bothersome.",
+    "precautions": "Avoid scratching or picking at lesions.",
+    "severity_logic": {
+      "mild": "Single small lesion with even color and surface.",
+      "moderate": "Multiple or thick lesions with irritation or scaling.",
+      "severe": "Rapidly growing, inflamed, or bleeding lesion (needs evaluation)."
+    },
+    "urgency_level": "Low",
+    "recommendation": "Benign; seek medical advice if lesion changes in color or shape."
+  },
+
+  "Dermatofibroma (df)": {
+    "full_name": "Dermatofibroma",
+    "description": "A harmless skin nodule caused by minor trauma or insect bites; firm to touch and slightly pigmented.",
+    "symptoms": ["Firm, dome-shaped bump", "Brownish or pinkish color", "Usually painless"],
+    "risk_factors": ["Minor skin injury", "Inflammatory reactions", "Insect bites"],
+    "treatment": "No treatment required; surgical removal optional for cosmetic reasons.",
+    "precautions": "Avoid scratching or trauma to prevent inflammation.",
+    "severity_logic": {
+      "mild": "Small, stable lesion with no pain or redness.",
+      "moderate": "Enlarged or irritated lesion due to friction.",
+      "severe": "Painful, bleeding, or rapidly growing lesion."
+    },
+    "urgency_level": "Low",
+    "recommendation": "Consult a dermatologist if lesion grows or becomes symptomatic."
+  },
+
+  "Melanoma (mel)": {
+    "full_name": "Melanoma",
+    "description": "A highly dangerous form of skin cancer originating in melanocytes, often showing irregular color, shape, and border.",
+    "symptoms": ["Asymmetrical mole", "Irregular border", "Multiple colors", "Rapid growth or bleeding"],
+    "risk_factors": ["Intense UV exposure", "Fair skin", "Family history of melanoma"],
+    "treatment": "Surgical removal, immunotherapy, targeted therapy, or radiation depending on stage.",
+    "precautions": "Use sunscreen daily, avoid tanning, and monitor moles monthly.",
+    "severity_logic": {
+      "mild": "Small, symmetrical mole with minimal irregularity.",
+      "moderate": "Asymmetrical, multi-colored lesion with mild growth.",
+      "severe": "Large, ulcerated, or bleeding lesion — possible metastasis."
+    },
+    "urgency_level": "Critical",
+    "recommendation": "Immediate dermatologist consultation required."
+  },
+
+  "Melanocytic Nevus (nv)": {
+    "full_name": "Melanocytic Nevus (Common Mole)",
+    "description": "A benign cluster of melanocytes that appears as a uniform, round, and small mole.",
+    "symptoms": ["Round or oval mole", "Even color", "Stable in size and shape"],
+    "risk_factors": ["Genetics", "Sun exposure"],
+    "treatment": "None unless atypical; surgical removal if irregular.",
+    "precautions": "Monitor for changes using the ABCDE rule (Asymmetry, Border, Color, Diameter, Evolving).",
+    "severity_logic": {
+      "mild": "Stable, symmetric mole with no growth.",
+      "moderate": "Slight asymmetry or color change.",
+      "severe": "Rapidly changing or irregular mole — may indicate malignancy."
+    },
+    "urgency_level": "Medium",
+    "recommendation": "Monitor regularly; seek evaluation if the mole changes."
+  },
+
+  "Vascular Lesion (vasc)": {
+    "full_name": "Vascular Lesion",
+    "description": "Lesions formed by clusters of blood vessels that appear red, purple, or blue and may bleed easily.",
+    "symptoms": ["Red or purple patch", "Soft or compressible lesion", "Occasional bleeding"],
+    "risk_factors": ["Genetic factors", "Sun exposure", "Hormonal changes"],
+    "treatment": "Laser therapy, cryotherapy, or surgical removal if symptomatic.",
+    "precautions": "Avoid trauma to prevent bleeding or irritation.",
+    "severity_logic": {
+      "mild": "Small, flat lesion without bleeding.",
+      "moderate": "Raised lesion with mild irritation or occasional bleeding.",
+      "severe": "Large, frequently bleeding or painful lesion."
+    },
+    "urgency_level": "Medium",
+    "recommendation": "Consult a dermatologist if bleeding or size increases."
+  }
+}

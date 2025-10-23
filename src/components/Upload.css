@@ -1,0 +1,128 @@
+/* Upload Section */
+.upload-section {
+  padding: 5rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.upload-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.upload-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+/* Upload Box */
+.upload-slot {
+  display: block;
+  padding: 3rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 16px;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.upload-slot:hover {
+  border-color: #2563eb;
+  background: #f3f4f6;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.upload-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.upload-subtext {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Buttons Container */
+.upload-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;         /* ✅ space between buttons */
+  margin-top: 2rem;
+}
+
+/* Analyze Button */
+.analyze-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Remove Button */
+.remove-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #c84a37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-btn:hover {
+  background: #a5402e;
+}
+
+/* Preview Section */
+.preview {
+  margin-top: 2rem;
+  text-align: center; /* ✅ center the preview image */
+}
+
+.preview h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.preview-img {
+  max-width: 280px;  /* ✅ smaller image */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  display: inline-block;
+}
+
+
+
+

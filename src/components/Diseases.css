@@ -1,0 +1,205 @@
+.diseases {
+  background: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.diseases-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.diseases-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.diseases-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4b5563;
+}
+
+.diseases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Square card with large image 
+.disease-card {
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 350px; /* square shape 
+}*/
+
+.disease-card {
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 420px;   /* taller for rectangle */
+}
+
+
+.disease-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Image takes most space */
+.disease-image {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*
+.disease-image {
+  height: 220px;   slightly taller image 
+  position: relative;
+  overflow: hidden;
+
+}
+*/
+
+
+.disease-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.disease-card:hover .disease-image img {
+  transform: scale(1.1);
+}
+
+
+.disease-card:hover .disease-img {
+  transform: scale(1.1);
+}
+
+.disease-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.8rem 0 0.3rem 0;
+  color: #111827;
+}
+
+.disease-desc {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* Learn More */
+.learn-more {
+  display: inline-block;
+  margin-top: auto;
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal box with animation */
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content.animated {
+  animation: zoomIn 0.35s ease;
+}
+
+.modal-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Close button */
+.close-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #1e40af;
+}
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Content inside each card */
+.disease-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;              /* ✅ add breathing room */
+  justify-content: space-between;
+}
+
+/* Give space below description */
+.disease-desc {
+  margin-bottom: 1rem;        /* ✅ spacing before Learn More */
+}
+
