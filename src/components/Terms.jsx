@@ -70,3 +70,6 @@ export default function Terms() {
     </div>
   );
 }
+//This change is from locally 
+//it is to test git statsh,pull and satsh pop operation
+
