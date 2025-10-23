@@ -86,6 +86,9 @@ const LoginRegister = () => {
               required
             />
           </div>
+          /*This comment is to perform git pull operation*/
+// to test how it works
+//for performing DevOps Sla
 
           {/* Password */}
           <label htmlFor="password" className="input-label">
