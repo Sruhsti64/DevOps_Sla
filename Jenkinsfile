@@ -3,9 +3,11 @@ pipeline {
 
     environment {
         NODE_ENV = "development"
+        PORT = "3000"
     }
 
     stages {
+
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
@@ -17,14 +19,15 @@ pipeline {
             steps {
                 echo 'Starting React app using npm start...'
                 bat 'start /B npm start'
-                sleep 10
+                echo 'Waiting for app to start...'
+                sleep 15
             }
         }
 
         stage('Verify Home Page') {
             steps {
                 echo 'Verifying that the home page is running...'
-                bat 'curl -I http://localhost:3000'
+                bat 'curl -I http://localhost:%PORT%'
             }
         }
     }
@@ -32,6 +35,7 @@ pipeline {
     post {
         success {
             echo '✅ React app started successfully!'
+            echo '🌐 Open http://localhost:3000 in your browser to view it.'
         }
         failure {
             echo '❌ Build failed. Check console logs for details.'
