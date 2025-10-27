@@ -15,6 +15,14 @@ pipeline {
             }
         }
 
+        stage('Configure Amplify') {
+            steps {
+                echo 'Generating aws-exports.js...'
+                bat 'amplify pull --yes'
+            }
+        }
+
+
         stage('Start React App') {
             steps {
                 echo 'Starting React app using npm start...'
