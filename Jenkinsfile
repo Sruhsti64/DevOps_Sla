@@ -18,7 +18,7 @@ pipeline {
         stage('Start React App') {
             steps {
                 echo 'Starting React app using npm start...'
-                bat 'start /B npm start'
+                bat 'npm start'
                 echo 'Waiting for app to start...'
                 sleep 15
             }
