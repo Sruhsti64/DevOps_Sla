@@ -5,14 +5,6 @@ pipeline {
         NODE_ENV = "development"
     }
 
-    stages {
-        stage('Checkout Source') {
-            steps {
-                echo 'Fetching source code from GitHub...'
-                git branch: 'main', url: 'https://github.com/Sruhshti64/DevOps_Sla.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
