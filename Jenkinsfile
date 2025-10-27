@@ -7,7 +7,6 @@ pipeline {
     }
 
     stages {
-
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
@@ -15,20 +14,10 @@ pipeline {
             }
         }
 
-        stage('Configure Amplify') {
-            steps {
-                echo 'Generating aws-exports.js...'
-                bat 'amplify pull --yes'
-            }
-        }
-
-
         stage('Start React App') {
             steps {
                 echo 'Starting React app using npm start...'
                 bat 'npm start'
-                echo 'Waiting for app to start...'
-                sleep 15
             }
         }
 
@@ -43,7 +32,6 @@ pipeline {
     post {
         success {
             echo '✅ React app started successfully!'
-            echo '🌐 Open http://localhost:3000 in your browser to view it.'
         }
         failure {
             echo '❌ Build failed. Check console logs for details.'
