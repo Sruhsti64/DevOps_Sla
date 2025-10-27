@@ -5,6 +5,7 @@ pipeline {
         NODE_ENV = "development"
     }
 
+    stages {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
@@ -26,10 +27,11 @@ pipeline {
                 bat 'curl -I http://localhost:3000'
             }
         }
+    }
 
     post {
         success {
-            echo '✅ React app started successfully with npm start!'
+            echo '✅ React app started successfully!'
         }
         failure {
             echo '❌ Build failed. Check console logs for details.'
