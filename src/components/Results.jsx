@@ -229,6 +229,30 @@ const generatePDF = async (data, uploadedImgBase64, analyzedImgBase64) => {
     margin,
     pageHeight - 6
   );
+/*
+  // Convert PDF to Blob and send to backend
+const pdfBlob = pdf.output("blob");
+const formData = new FormData();
+formData.append("file", pdfBlob, "DermLab_Analysis_Report.pdf");
+
+// Assuming you have the user's email from Cognito
+const userEmail = localStorage.getItem("userEmail"); // you can set this after Cognito login
+formData.append("email", userEmail);
+
+try {
+  await fetch("http://localhost:5000/send-report", {
+    method: "POST",
+    body: formData,
+  });
+  alert("📩 Report has been emailed successfully!");
+} catch (err) {
+  console.error("Error sending email:", err);
+  alert("Failed to send email.");
+}
+
+// Still allow user to save it locally
+pdf.save("DermLab_Analysis_Report.pdf");
+*/
 
   // 💾 Save
   pdf.save("DermLab_Analysis_Report.pdf");

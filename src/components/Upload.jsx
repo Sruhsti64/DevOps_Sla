@@ -67,7 +67,7 @@ function Upload({ onAnalyze }) {
       const formData = new FormData();
       formData.append("image", selectedFile);
 
-      const res = await axios.post("http://13.232.26.0:9000/predict", formData, {
+      const res = await axios.post("http://65.2.130.163:9000/predict", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

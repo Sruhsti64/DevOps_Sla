@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./LoginRegister.css";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa"; // 👈 added icons
 import { Link, useNavigate } from "react-router-dom";
-import { signIn, getCurrentUser } from "aws-amplify/auth"; // ✅ Added getCurrentUser
+import { signIn, getCurrentUser } from "aws-amplify/auth";
 import dermalabLogo from "../assets/images/dermalab-logo.png";
 
 const LoginRegister = () => {
@@ -13,6 +13,8 @@ const LoginRegister = () => {
     password: "",
     remember: false,
   });
+
+  const [showPassword, setShowPassword] = useState(false); // 👈 state for toggle
 
   // ✅ Redirect if already logged in
   useEffect(() => {
@@ -86,25 +88,31 @@ const LoginRegister = () => {
               required
             />
           </div>
-          /*This comment is to perform git pull operation*/
-// to test how it works
-//for performing DevOps Sla
+          {/*This comment is to perform git pull operation}
+          // to test how it works
+          //for performing DevOps Sla
 
           {/* Password */}
           <label htmlFor="password" className="input-label">
             Password
           </label>
-          <div className="input-group">
+          <div className="input-group password-group">
             <FaLock className="input-icon" />
             <input
               id="password"
-              type="password"
+              type={showPassword ? "text" : "password"} // 👈 toggle password visibility
               name="password"
               placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
               required
             />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
           </div>
 
           {/* Remember Me & Forgot Password */}
@@ -120,7 +128,7 @@ const LoginRegister = () => {
             </label>
             <Link
               to="/forgot-password"
-              state={{ email: formData.email }} // ✅ Pass email here
+              state={{ email: formData.email }}
               className="forgot-link"
             >
               Forgot password?
@@ -131,7 +139,6 @@ const LoginRegister = () => {
           <button type="submit" className="sign-in-btn">
             Sign In
           </button>
-
 
           <p className="signup-text">
             Don’t have an account? <Link to="/signup">Sign up</Link>

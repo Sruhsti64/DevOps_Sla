@@ -222,6 +222,23 @@
   color: #2d60ff;
   text-decoration: none;
 }
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+  color: #000;
+}
 
 .terms a:hover {
   text-decoration: underline;

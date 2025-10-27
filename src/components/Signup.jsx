@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaUser, FaEye, FaEyeSlash } from "react-icons/fa"; // 👈 added eye icons
 import { Link, useNavigate } from "react-router-dom";
 import dermalabLogo from "../assets/images/dermalab-logo.png";
 
@@ -23,6 +23,7 @@ const Signup = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // 👈 added state for password visibility
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -60,14 +61,10 @@ const Signup = () => {
       // Handle existing but unverified users
       if (err.name === "UsernameExistsException") {
         try {
-          // Try to resend the verification code
           await resendSignUpCode({ username: formData.email });
-
-          // Redirect to confirmation page
           setError("This email is registered but not verified. Please verify your account.");
           navigate("/confirm-signup", { state: { email: formData.email } });
         } catch (innerError) {
-          // If the user is already verified
           if (innerError.name === "InvalidParameterException") {
             setError("User already exists and is verified. Please log in.");
           } else {
@@ -137,17 +134,23 @@ const Signup = () => {
           <label htmlFor="password" className="input-label">
             Password
           </label>
-          <div className="input-group">
+          <div className="input-group password-group">
             <FaLock className="input-icon" />
             <input
               id="password"
-              type="password"
+              type={showPassword ? "text" : "password"} // 👈 toggle visibility
               name="password"
               placeholder="Create a password"
               value={formData.password}
               onChange={handleChange}
               required
             />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
           </div>
 
           {/* Terms & Conditions */}
@@ -164,7 +167,6 @@ const Signup = () => {
               <Link to="/terms" className="terms-link">
                 Terms and Conditions
               </Link>
-              
             </label>
           </div>
 
