@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import { FaEnvelope, FaLock, FaUser, FaEye, FaEyeSlash } from "react-icons/fa"; // 👈 added eye icons
+import { FaEnvelope, FaLock, FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import dermalabLogo from "../assets/images/dermalab-logo.png";
 
-// Amplify imports (v6)
-import { signUp, resendSignUpCode } from "aws-amplify/auth";
-import { Amplify } from "aws-amplify";
-import awsExports from "../aws-exports";
-
-Amplify.configure(awsExports);
+// 🔴 AWS Amplify imports removed
+// import { signUp, resendSignUpCode } from "aws-amplify/auth";
+// import { Amplify } from "aws-amplify";
+// import awsExports from "../aws-exports";
+// Amplify.configure(awsExports);
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ const Signup = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // 👈 added state for password visibility
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -38,42 +37,14 @@ const Signup = () => {
     setError("");
     setLoading(true);
 
+    // 🔴 Replaced Amplify signup logic with a simple local simulation
     try {
-      const { email, password, fullName } = formData;
-
-      // Try to sign up a new user
-      await signUp({
-        username: email,
-        password,
-        options: {
-          userAttributes: {
-            email,
-            name: fullName,
-          },
-        },
-      });
-
-      console.log("Signup successful");
-      navigate("/confirm-signup", { state: { email } });
+      console.log("Signup data:", formData);
+      alert("Signup successful! (Demo mode — no AWS connection)");
+      navigate("/login"); // Redirect to login after successful demo signup
     } catch (err) {
       console.error("Signup error:", err);
-
-      // Handle existing but unverified users
-      if (err.name === "UsernameExistsException") {
-        try {
-          await resendSignUpCode({ username: formData.email });
-          setError("This email is registered but not verified. Please verify your account.");
-          navigate("/confirm-signup", { state: { email: formData.email } });
-        } catch (innerError) {
-          if (innerError.name === "InvalidParameterException") {
-            setError("User already exists and is verified. Please log in.");
-          } else {
-            setError(innerError.message || "An error occurred. Please try again.");
-          }
-        }
-      } else {
-        setError(err.message || "Error signing up");
-      }
+      setError("An error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -138,7 +109,7 @@ const Signup = () => {
             <FaLock className="input-icon" />
             <input
               id="password"
-              type={showPassword ? "text" : "password"} // 👈 toggle visibility
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Create a password"
               value={formData.password}
