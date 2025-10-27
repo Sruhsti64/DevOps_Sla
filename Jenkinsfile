@@ -26,7 +26,6 @@ pipeline {
                 bat 'curl -I http://localhost:3000'
             }
         }
-    }
 
     post {
         success {
