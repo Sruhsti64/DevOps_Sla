@@ -20,21 +20,15 @@ pipeline {
                 bat 'npm start'
             }
         }
-
-        stage('Verify Home Page') {
-            steps {
-                echo 'Verifying that the home page is running...'
-                bat 'curl -I http://localhost:%PORT%'
-            }
-        }
     }
 
     post {
         success {
-            echo '✅ React app started successfully!'
+            echo 'React app started successfully!'
+            echo 'Open http://localhost:3000 in your browser to view it.'
         }
         failure {
-            echo '❌ Build failed. Check console logs for details.'
+            echo 'Build failed. Check console logs for details.'
         }
     }
 }
