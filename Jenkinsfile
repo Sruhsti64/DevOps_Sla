@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout Source') {
             steps {
                 echo 'Fetching source code from GitHub...'
-                git branch: 'main', url: 'https://github.com/yourusername/your-repo-name.git'
+                git branch: 'main', url: 'https://github.com/Sruhsti64/DevOps_Sla.git'
             }
         }
 
