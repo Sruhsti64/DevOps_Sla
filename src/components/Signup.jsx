@@ -4,12 +4,6 @@ import { FaEnvelope, FaLock, FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import dermalabLogo from "../assets/images/dermalab-logo.png";
 
-// 🔴 AWS Amplify imports removed
-// import { signUp, resendSignUpCode } from "aws-amplify/auth";
-// import { Amplify } from "aws-amplify";
-// import awsExports from "../aws-exports";
-// Amplify.configure(awsExports);
-
 const Signup = () => {
   const navigate = useNavigate();
 
